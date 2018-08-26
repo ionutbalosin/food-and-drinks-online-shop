@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: pizzaprovider
+
+# Run app with -Dserver.port=9090 as VM arguments
+#server:
+#  port: ${vcap.application.port:9090}
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    serviceUrl:
+      defaultZone: ${vcap.services.eureka-service.credentials.uri:http://127.0.0.1:8761}/eureka/

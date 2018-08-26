@@ -1,0 +1,86 @@
+buildscript {
+	ext {
+		springBootVersion = '2.0.4.RELEASE'
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+    }
+    
+    repositories {
+		mavenCentral()
+	}
+}
+
+allprojects {
+    group = 'org.ib.spring'
+    version = '0.0.1-SNAPSHOT'
+}
+
+subprojects {
+    apply plugin: 'java'
+    apply plugin: 'eclipse'
+    apply plugin: 'org.springframework.boot'
+    apply plugin: 'io.spring.dependency-management'
+    
+    dependencies {
+        compile('org.springframework.boot:spring-boot-starter-web')
+        testCompile('org.springframework.boot:spring-boot-starter-test')
+    }
+    
+	ext {
+		uploadArchivesType = 'app'
+        springCloudVersion = 'Finchley.SR1'
+	}
+    
+    repositories {
+		mavenCentral()
+	}    
+}
+
+project(':eureka-client') {
+    dependencies {
+        compile('org.springframework.cloud:spring-cloud-starter-netflix-eureka-client')
+    }
+    
+    dependencyManagement {
+        imports {
+            mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+        }
+    }
+    
+    repositories {
+		mavenCentral()
+	}
+}
+
+project(':eureka-service') {
+    dependencies {
+        compile('org.springframework.cloud:spring-cloud-starter-netflix-eureka-server')
+    }
+    
+    dependencyManagement {
+        imports {
+            mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+        }
+    }
+    
+    repositories {
+		mavenCentral()
+	}
+}
+
+project(':service-provider') {
+    dependencies {
+        compile('org.springframework.cloud:spring-cloud-starter-netflix-eureka-client')
+    }
+    
+    dependencyManagement {
+        imports {
+            mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+        }
+    }
+    
+    repositories {
+		mavenCentral()
+	}
+}

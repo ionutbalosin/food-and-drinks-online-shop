@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: pizzaconsumer
+
+server:
+  port: ${vcap.application.port:9091}
+
+eureka:
+  instance:
+    hostname: localhost
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    serviceUrl:
+      defaultZone: ${vcap.services.eureka-service.credentials.uri:http://127.0.0.1:8761}/eureka/
