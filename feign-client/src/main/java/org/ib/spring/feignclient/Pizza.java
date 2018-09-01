@@ -1,4 +1,4 @@
-package org.ib.spring.resttemplateclient;
+package org.ib.spring.feignclient;
 
 public class Pizza {
     private String name, price;

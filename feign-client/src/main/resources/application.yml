@@ -2,6 +2,14 @@ spring:
   application:
     name: feignclient
 
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 5000
+        readTimeout: 5000
+        loggerLevel: full
+
 server:
   port: ${vcap.application.port:9091}
 

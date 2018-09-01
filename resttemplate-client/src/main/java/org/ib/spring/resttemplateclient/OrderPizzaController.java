@@ -13,7 +13,7 @@ public class OrderPizzaController {
 
     @RequestMapping("/orderPizza")
     public String orderPizza() {
-        String results = restTemplate.getForObject("http://pizzaprovider/orderPizza/", String.class);
+        String results = restTemplate.getForObject("http://serviceprovider/orderPizza/", String.class);
         return results;
     }
 }

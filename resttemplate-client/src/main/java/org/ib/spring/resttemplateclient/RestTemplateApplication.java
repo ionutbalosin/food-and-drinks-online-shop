@@ -1,4 +1,4 @@
-package org.ib.spring.feignclient;
+package org.ib.spring.resttemplateclient;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -9,10 +9,10 @@ import org.springframework.web.client.RestTemplate;
 
 @SpringBootApplication
 @EnableEurekaClient
-public class PizzaConsumerApplication {
+public class RestTemplateApplication {
 
 	public static void main(String[] args) {
-        SpringApplication.run(PizzaConsumerApplication.class, args);
+        SpringApplication.run(RestTemplateApplication.class, args);
 	}
 
 	// NB: Use @LoadBalanced annotation if you rely on Eureka service discovery! Otherwise it does not work!

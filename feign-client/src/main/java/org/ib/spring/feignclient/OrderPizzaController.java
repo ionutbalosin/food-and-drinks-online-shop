@@ -1,25 +1,11 @@
 package org.ib.spring.feignclient;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.client.RestTemplate;
+import org.springframework.web.bind.annotation.RequestMethod;
 
-@RestController
-public class OrderPizzaController {
-
-    @Autowired
-    private RestTemplate restTemplate;
-
-    @RequestMapping(path = "/orderPizza")
-    public String orderPizza() {
-        String results = restTemplate.getForObject("http://serviceprovider/orderPizza/", String.class);
-        return results;
-    }
-
-    @RequestMapping(path = "/orderBeer")
-    public String orderBeer() {
-        String results = restTemplate.getForObject("http://serviceprovider/orderPizza/", String.class);
-        return results;
-    }
+@FeignClient(name = "feignclient", url = "http://serviceprovider")
+public interface OrderPizzaController {
+    @RequestMapping(method = RequestMethod.GET, value = "/orderPizza")
+    String orderPizza();
 }
