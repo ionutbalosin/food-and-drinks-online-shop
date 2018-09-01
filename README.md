@@ -12,6 +12,6 @@ The entire communication is based on REST calls.
 
 ### Technology Stack
 
-1. Spring Cloud (Eureka, FeignClient, Ribbon)
+1. Spring Cloud (Eureka, FeignClient, Ribbon, Hystrix)
 2. Spring Boot (RestTemplate)
 3. Gradle
