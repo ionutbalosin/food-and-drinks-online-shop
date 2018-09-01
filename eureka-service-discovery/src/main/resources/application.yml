@@ -1,6 +1,15 @@
 server:
   port: 8761
 
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: auditevents, health, info, metrics, threaddump, heapdump, loggers
+
 eureka:
   instance:
     hostname: localhost

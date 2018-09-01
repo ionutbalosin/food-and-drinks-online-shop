@@ -5,6 +5,15 @@ spring:
 server:
   port: ${vcap.application.port:9092}
 
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: auditevents, health, info, metrics, threaddump, heapdump, loggers
+
 eureka:
   instance:
     hostname: localhost

@@ -2,6 +2,15 @@ spring:
   application:
     name: serviceprovider
 
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include: auditevents, health, info, metrics, threaddump, heapdump, loggers
+
 # Run app with -Dserver.port=9081 as VM arguments
 #server:
 #  port: ${vcap.application.port:9081}
