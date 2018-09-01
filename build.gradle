@@ -37,7 +37,7 @@ subprojects {
 	}    
 }
 
-project(':eureka-client') {
+project(':feign-client') {
     dependencies {
         compile('org.springframework.cloud:spring-cloud-starter-netflix-eureka-client')
     }
@@ -53,7 +53,23 @@ project(':eureka-client') {
 	}
 }
 
-project(':eureka-service') {
+project(':resttemplate-client') {
+    dependencies {
+        compile('org.springframework.cloud:spring-cloud-starter-netflix-eureka-client')
+    }
+    
+    dependencyManagement {
+        imports {
+            mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+        }
+    }
+    
+    repositories {
+		mavenCentral()
+	}
+}
+
+project(':eureka-service-discovery') {
     dependencies {
         compile('org.springframework.cloud:spring-cloud-starter-netflix-eureka-server')
     }

@@ -1,10 +1,9 @@
 spring:
   application:
-    name: serviceprovider
+    name: resttemplateclient
 
-# Run app with -Dserver.port=9081 as VM arguments
-#server:
-#  port: ${vcap.application.port:9081}
+server:
+  port: ${vcap.application.port:9092}
 
 eureka:
   instance:
