@@ -2,6 +2,9 @@ spring:
   application:
     name: feignclient
 
+server:
+  port: ${vcap.application.port:9091}
+
 management:
   endpoint:
     health:
@@ -9,7 +12,7 @@ management:
   endpoints:
     web:
       exposure:
-        include: auditevents, health, info, metrics, threaddump, heapdump, loggers
+        include: auditevents, health, info, metrics, threaddump, heapdump, loggers, configprops
 
 feign:
   client:
@@ -18,9 +21,12 @@ feign:
         connectTimeout: 5000
         readTimeout: 5000
         loggerLevel: full
+  hystrix:
+    enabled: true
 
-server:
-  port: ${vcap.application.port:9091}
+hystrix:
+  metrics:
+    enabled: true
 
 eureka:
   instance:

@@ -12,7 +12,7 @@ public class PizzaProviderController {
 
     @RequestMapping(value="/orderPizza", method = RequestMethod.GET)
     String orderPizza() {
-        return "[PizzaProvider- " + Thread.currentThread() + "] Service Up And Running";
+        return "[PizzaProvider- " + Thread.currentThread() + "] Pepperonni";
     }
 
     @RequestMapping(value="/pizzaMenu", method = RequestMethod.GET)

@@ -8,7 +8,7 @@ management:
   endpoints:
     web:
       exposure:
-        include: auditevents, health, info, metrics, threaddump, heapdump, loggers
+        include: auditevents, health, info, metrics, threaddump, heapdump, loggers, configprops
 
 eureka:
   instance:

@@ -1,4 +1,4 @@
-package org.ib.spring.feignclient;
+package org.ib.spring.resttemplateclient;
 
 import com.google.gson.Gson;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
-public class HomePageHelpController {
+public class HomePageController {
 
     @Autowired
     HomePageHelp getHomePageHelp;

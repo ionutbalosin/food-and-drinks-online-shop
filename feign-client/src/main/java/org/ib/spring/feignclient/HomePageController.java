@@ -1,4 +1,4 @@
-package org.ib.spring.resttemplateclient;
+package org.ib.spring.feignclient;
 
 import com.google.gson.Gson;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,15 +9,23 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
-public class HomePageHelpController {
+public class HomePageController {
 
     @Autowired
     HomePageHelp getHomePageHelp;
+
+    @Autowired
+    PizzaService pizzaService;
 
     @RequestMapping("/")
     public String home() {
         Gson gson = new Gson();
         return gson.toJson(getHomePageHelp);
+    }
+
+    @RequestMapping("/orderPizza")
+    public String orderPizza() {
+        return pizzaService.orderPizza();
     }
 }
 
