@@ -65,16 +65,21 @@ project(':feign-client') {
 project(':resttemplate-client') {
     dependencies {
         compile('org.springframework.cloud:spring-cloud-starter-netflix-eureka-client')
+        compile("org.springframework.cloud:spring-cloud-netflix:${springCloudNetflixVersion}")
+        compile("com.netflix.hystrix:hystrix-javanica")
+        compile('org.springframework.cloud:spring-cloud-starter-netflix-eureka-client')
     }
     
     dependencyManagement {
         imports {
             mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
-        }
+            mavenBom "org.springframework.cloud:spring-cloud-openfeign:${openFeignVersion}"        }
     }
     
     repositories {
 		mavenCentral()
+        maven { url "https://repo.spring.io/snapshot" }
+        maven { url "https://repo.spring.io/milestone" }
 	}
 }
 

@@ -2,6 +2,10 @@ spring:
   application:
     name: pizzaprovider
 
+# Run app with -Dserver.port=9081 as VM arguments
+#server:
+#  port: ${vcap.application.port:9081}
+
 management:
   endpoint:
     health:
@@ -11,9 +15,19 @@ management:
       exposure:
         include: auditevents, health, info, metrics, threaddump, heapdump, loggers, configprops
 
-# Run app with -Dserver.port=9081 as VM arguments
-#server:
-#  port: ${vcap.application.port:9081}
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 5000
+        readTimeout: 5000
+        loggerLevel: full
+  hystrix:
+    enabled: true
+
+hystrix:
+  metrics:
+    enabled: true
 
 eureka:
   instance:

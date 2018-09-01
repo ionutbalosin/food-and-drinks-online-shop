@@ -14,10 +14,18 @@ public class HomePageController {
     @Autowired
     HomePageHelp getHomePageHelp;
 
+    @Autowired
+    PizzaService pizzaService;
+
     @RequestMapping("/")
     public String home() {
         Gson gson = new Gson();
         return gson.toJson(getHomePageHelp);
+    }
+
+    @RequestMapping("/orderPizza")
+    public String orderPizza() {
+        return pizzaService.orderPizza();
     }
 }
 
