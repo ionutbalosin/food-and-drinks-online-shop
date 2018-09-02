@@ -3,6 +3,7 @@ buildscript {
 		springBootVersion = '2.0.4.RELEASE'
         springCloudVersion = 'Finchley.SR1'
         openFeignVersion = '2.0.1.RELEASE'
+        zuulVersion = '2.0.0.M2'
         springCloudNetflixVersion = '2.0.1.RELEASE'
 	}
 	dependencies {
@@ -83,6 +84,25 @@ project(':resttemplate-client') {
 	}
 }
 
+project(':zuul-gateway') {
+    dependencies {
+        compile('org.springframework.cloud:spring-cloud-starter-eureka')
+        compile("org.springframework.cloud:spring-cloud-starter-zuul:${zuulVersion}")
+    }
+
+    dependencyManagement {
+        imports {
+            mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+        }
+    }
+
+    repositories {
+        mavenCentral()
+        maven { url "https://repo.spring.io/snapshot" }
+        maven { url "https://repo.spring.io/milestone" }
+    }
+}
+
 project(':eureka-service-discovery') {
     dependencies {
         compile('org.springframework.cloud:spring-cloud-starter-netflix-eureka-server')
@@ -99,7 +119,7 @@ project(':eureka-service-discovery') {
 	}
 }
 
-project(':service-provider') {
+project(':service-provider-1') {
     dependencies {
         compile('org.springframework.cloud:spring-cloud-starter-netflix-eureka-client')
     }
@@ -113,4 +133,20 @@ project(':service-provider') {
     repositories {
 		mavenCentral()
 	}
+}
+
+project(':service-provider-2') {
+    dependencies {
+        compile('org.springframework.cloud:spring-cloud-starter-netflix-eureka-client')
+    }
+
+    dependencyManagement {
+        imports {
+            mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+        }
+    }
+
+    repositories {
+        mavenCentral()
+    }
 }

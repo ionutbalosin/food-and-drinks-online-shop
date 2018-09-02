@@ -1,6 +1,8 @@
 rootProject.name = 'food-and-drinks-online-shop'
 
+include 'eureka-service-discovery'
+include 'zuul-gateway'
+include 'service-provider-1'
+include 'service-provider-2'
 include 'feign-client'
 include 'resttemplate-client'
-include 'eureka-service-discovery'
-include 'service-provider'

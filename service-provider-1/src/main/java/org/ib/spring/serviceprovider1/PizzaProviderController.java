@@ -1,4 +1,4 @@
-package org.ib.spring.serviceprovider;
+package org.ib.spring.serviceprovider1;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;

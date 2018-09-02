@@ -1,4 +1,4 @@
-package org.ib.spring.serviceprovider;
+package org.ib.spring.serviceprovider1;
 
 public class Pizza {
     private String name, price;
