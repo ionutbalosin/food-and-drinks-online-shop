@@ -12,6 +12,14 @@ The entire communication is based on REST calls.
 
 ### Technology Stack
 
-1. Spring Cloud (Eureka, FeignClient, Ribbon, Hystrix)
-2. Spring Boot (RestTemplate)
-3. Gradle
+1. Zuul –  gateway service that provides dynamic routing, monitoring, resiliency, security, and more
+2. Ribbon – client side load balancer
+3. Feign – declarative REST client
+4. RestTemplate – REST client
+5. Eureka – service registration and discovery
+
+### ToDo
+
+6. Sleuth – distributed tracing via logs
+7. Zipkin – distributed tracing system with request visualization.
+8. KeyCloak – identity and access management
