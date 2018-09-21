@@ -17,6 +17,9 @@ public class HomePageController {
     @Autowired
     PizzaService pizzaService;
 
+    @Autowired
+    BeerService beerService;
+
     @RequestMapping("/")
     public String home() {
         Gson gson = new Gson();
@@ -26,6 +29,11 @@ public class HomePageController {
     @RequestMapping("/orderPizza")
     public String orderPizza() {
         return pizzaService.orderPizza();
+    }
+
+    @RequestMapping("/orderBeer")
+    public String orderBeer() {
+        return beerService.orderBeer();
     }
 }
 

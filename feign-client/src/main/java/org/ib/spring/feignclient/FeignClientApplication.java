@@ -23,8 +23,13 @@ public class FeignClientApplication {
     }
 
     @Bean
-    public HystrixPizzaServiceFallback getHystrixClientFallback() {
+    public HystrixPizzaServiceFallback getHystrixPizzaServiceFallback() {
 	    return new HystrixPizzaServiceFallback();
+    }
+
+    @Bean
+    public HystrixBeerServiceFallback getHystrixBeerServiceFallback() {
+        return new HystrixBeerServiceFallback();
     }
 
 }
