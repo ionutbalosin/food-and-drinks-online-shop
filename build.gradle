@@ -80,7 +80,7 @@ project(':resttemplate-client') {
 
 project(':zuul-gateway') {
     dependencies {
-        compile("org.springframework.cloud:spring-cloud-starter-eureka:${eurekaVersion}")
+        compile('org.springframework.cloud:spring-cloud-starter-netflix-eureka-client')
         compile("org.springframework.cloud:spring-cloud-starter-zuul:${zuulVersion}")
     }
 
