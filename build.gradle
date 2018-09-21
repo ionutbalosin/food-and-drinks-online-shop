@@ -2,17 +2,20 @@ buildscript {
 	ext {
 		springBootVersion = '2.0.4.RELEASE'
         springCloudVersion = 'Finchley.SR1'
-        openFeignVersion = '2.0.1.RELEASE'
-        zuulVersion = '2.0.0.M2'
         springCloudNetflixVersion = '2.0.1.RELEASE'
+        openFeignVersion = '2.0.1.RELEASE'
+        eurekaVersion = '2.0.0.M2'
+        zuulVersion = '2.0.0.M2'
 	}
 	dependencies {
 		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
     }
-    
+
     repositories {
-		mavenCentral()
-	}
+        mavenCentral()
+        maven { url "https://repo.spring.io/snapshot" }
+        maven { url "https://repo.spring.io/milestone" }
+    }
 }
 
 allprojects {
@@ -30,6 +33,12 @@ subprojects {
         compile('org.springframework.boot:spring-boot-starter-web')
         compile('org.springframework.boot:spring-boot-starter-actuator')
         testCompile('org.springframework.boot:spring-boot-starter-test')
+    }
+
+    dependencyManagement {
+        imports {
+            mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+        }
     }
 
 	ext {
@@ -51,16 +60,9 @@ project(':feign-client') {
     
     dependencyManagement {
         imports {
-            mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
             mavenBom "org.springframework.cloud:spring-cloud-openfeign:${openFeignVersion}"
         }
     }
-    
-    repositories {
-		mavenCentral()
-        maven { url "https://repo.spring.io/snapshot" }
-        maven { url "https://repo.spring.io/milestone" }
-	}
 }
 
 project(':resttemplate-client') {
@@ -68,32 +70,18 @@ project(':resttemplate-client') {
         compile('org.springframework.cloud:spring-cloud-starter-netflix-eureka-client')
         compile("org.springframework.cloud:spring-cloud-netflix:${springCloudNetflixVersion}")
         compile("com.netflix.hystrix:hystrix-javanica")
-        compile('org.springframework.cloud:spring-cloud-starter-netflix-eureka-client')
     }
     
     dependencyManagement {
         imports {
-            mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
             mavenBom "org.springframework.cloud:spring-cloud-openfeign:${openFeignVersion}"        }
     }
-    
-    repositories {
-		mavenCentral()
-        maven { url "https://repo.spring.io/snapshot" }
-        maven { url "https://repo.spring.io/milestone" }
-	}
 }
 
 project(':zuul-gateway') {
     dependencies {
-        compile('org.springframework.cloud:spring-cloud-starter-eureka')
+        compile("org.springframework.cloud:spring-cloud-starter-eureka:${eurekaVersion}")
         compile("org.springframework.cloud:spring-cloud-starter-zuul:${zuulVersion}")
-    }
-
-    dependencyManagement {
-        imports {
-            mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
-        }
     }
 
     repositories {
@@ -107,46 +95,16 @@ project(':eureka-service-discovery') {
     dependencies {
         compile('org.springframework.cloud:spring-cloud-starter-netflix-eureka-server')
     }
-    
-    dependencyManagement {
-        imports {
-            mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
-        }
-    }
-    
-    repositories {
-		mavenCentral()
-	}
 }
 
 project(':service-provider-1') {
     dependencies {
         compile('org.springframework.cloud:spring-cloud-starter-netflix-eureka-client')
     }
-    
-    dependencyManagement {
-        imports {
-            mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
-        }
-    }
-    
-    repositories {
-		mavenCentral()
-	}
 }
 
 project(':service-provider-2') {
     dependencies {
         compile('org.springframework.cloud:spring-cloud-starter-netflix-eureka-client')
-    }
-
-    dependencyManagement {
-        imports {
-            mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
-        }
-    }
-
-    repositories {
-        mavenCentral()
     }
 }
