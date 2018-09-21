@@ -97,13 +97,13 @@ project(':eureka-service-discovery') {
     }
 }
 
-project(':service-provider-1') {
+project(':pizza-service-provider') {
     dependencies {
         compile('org.springframework.cloud:spring-cloud-starter-netflix-eureka-client')
     }
 }
 
-project(':service-provider-2') {
+project(':beer-service-provider') {
     dependencies {
         compile('org.springframework.cloud:spring-cloud-starter-netflix-eureka-client')
     }

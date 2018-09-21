@@ -1,0 +1,4 @@
+Manifest-Version: 1.0
+Start-Class: org.ib.spring.beerserviceprovider.BeerProviderApplication
+Main-Class: org.springframework.boot.loader.JarLauncher
+

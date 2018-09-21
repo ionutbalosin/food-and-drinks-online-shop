@@ -11,13 +11,14 @@ public class PizzaService {
     @Autowired
     private RestTemplate restTemplate;
 
-    @HystrixCommand(fallbackMethod = "reliable")
+    @HystrixCommand(fallbackMethod = "pizzaFallback")
     public String orderPizza() {
         String results = restTemplate.getForObject("http://pizzaprovider/orderPizza/", String.class);
         return results;
     }
 
-    public String reliable() {
+    public String pizzaFallback() {
         return "Pizza service is not available. Please check again later :(";
     }
+
 }
