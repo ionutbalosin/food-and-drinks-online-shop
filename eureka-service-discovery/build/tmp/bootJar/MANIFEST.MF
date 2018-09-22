@@ -1,5 +1,2 @@
 Manifest-Version: 1.0
-Start-Class: org.ib.spring.eurekaservicediscovery.ServiceDiscoveryProv
- ider
-Main-Class: org.springframework.boot.loader.JarLauncher
 

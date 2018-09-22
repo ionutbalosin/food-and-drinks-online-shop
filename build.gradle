@@ -50,7 +50,7 @@ subprojects {
 	}    
 }
 
-project(':feign-client') {
+project(':feign-shop') {
     dependencies {
         compile("org.springframework.cloud:spring-cloud-starter-openfeign")
         compile("org.springframework.cloud:spring-cloud-netflix:${springCloudNetflixVersion}")
@@ -65,7 +65,7 @@ project(':feign-client') {
     }
 }
 
-project(':resttemplate-client') {
+project(':resttemplate-shop') {
     dependencies {
         compile('org.springframework.cloud:spring-cloud-starter-netflix-eureka-client')
         compile("org.springframework.cloud:spring-cloud-netflix:${springCloudNetflixVersion}")
