@@ -1,0 +1,109 @@
+$ ./ab.exe -n 1000 -c 10 -l http://localhost:9091/orderPizza
+This is ApacheBench, Version 2.3 <$Revision: 1826891 $>
+Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
+Licensed to The Apache Software Foundation, http://www.apache.org/
+
+Benchmarking localhost (be patient)
+Completed 100 requests
+Completed 200 requests
+Completed 300 requests
+Completed 400 requests
+Completed 500 requests
+Completed 600 requests
+Completed 700 requests
+Completed 800 requests
+Completed 900 requests
+Completed 1000 requests
+Finished 1000 requests
+
+
+Server Software:
+Server Hostname:        localhost
+Server Port:            9091
+
+Document Path:          /orderPizza
+Document Length:        Variable
+
+Concurrency Level:      10
+Time taken for tests:   3.399 seconds
+Complete requests:      1000
+Failed requests:        0
+Total transferred:      192173 bytes
+HTML transferred:       59173 bytes
+Requests per second:    294.20 [#/sec] (mean)
+Time per request:       33.990 [ms] (mean)
+Time per request:       3.399 [ms] (mean, across all concurrent requests)
+Transfer rate:          55.21 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        1    1   1.6      1      35
+Processing:     3   32  56.6     22     914
+Waiting:        3   28  49.8     19     914
+Total:          4   33  56.7     23     915
+
+Percentage of the requests served within a certain time (ms)
+  50%     23
+  66%     29
+  75%     35
+  80%     40
+  90%     57
+  95%     82
+  98%    147
+  99%    233
+ 100%    915 (longest request)
+
+$ ./ab.exe -n 1000 -c 10 -l http://localhost:9091/orderBeer
+This is ApacheBench, Version 2.3 <$Revision: 1826891 $>
+Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
+Licensed to The Apache Software Foundation, http://www.apache.org/
+
+Benchmarking localhost (be patient)
+Completed 100 requests
+Completed 200 requests
+Completed 300 requests
+Completed 400 requests
+Completed 500 requests
+Completed 600 requests
+Completed 700 requests
+Completed 800 requests
+Completed 900 requests
+Completed 1000 requests
+Finished 1000 requests
+
+
+Server Software:
+Server Hostname:        localhost
+Server Port:            9091
+
+Document Path:          /orderBeer
+Document Length:        Variable
+
+Concurrency Level:      10
+Time taken for tests:   6.399 seconds
+Complete requests:      1000
+Failed requests:        0
+Total transferred:      193125 bytes
+HTML transferred:       60125 bytes
+Requests per second:    156.26 [#/sec] (mean)
+Time per request:       63.995 [ms] (mean)
+Time per request:       6.399 [ms] (mean, across all concurrent requests)
+Transfer rate:          29.47 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        1    1   1.0      1      21
+Processing:     6   62  73.3     44     748
+Waiting:        5   61  73.3     43     747
+Total:          7   64  73.3     45     749
+
+Percentage of the requests served within a certain time (ms)
+  50%     45
+  66%     61
+  75%     77
+  80%     86
+  90%    115
+  95%    143
+  98%    227
+  99%    580
+ 100%    749 (longest request)
