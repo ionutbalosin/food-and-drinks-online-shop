@@ -6,13 +6,14 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.concurrent.ThreadLocalRandom;
 
 @RestController
 public class BeerProviderController {
 
     @RequestMapping(value="/orderBeer", method = RequestMethod.GET)
     String orderBeer() {
-        return "[BeerProvider- " + Thread.currentThread() + "] Heineken";
+        return String.format("[BeerProvider-%d] - %s", ThreadLocalRandom.current().nextInt(), "Heineken");
     }
 
     @RequestMapping(value="/beerMenu", method = RequestMethod.GET)

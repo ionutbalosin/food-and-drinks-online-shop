@@ -2,6 +2,9 @@ spring:
   application:
     name: resttemplateshop
 
+logging:
+  file: resttemplate-shop.log
+
 server:
   port: ${vcap.application.port:9092}
 

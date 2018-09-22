@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-JMC_ARGS="-XX:+UnlockDiagnosticVMOptions -XX:+DebugNonSafepoints -XX:+UnlockCommercialFeatures -XX:+FlightRecorder -XX:StartFlightRecording=delay=1s,duration=99999s,disk=true,filename="
+. ./properties.sh
 
 # Start Feign Client Client
 echo ">>> START FEIGN SHOP <<<"

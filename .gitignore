@@ -2,7 +2,6 @@
 **/build/
 **/out/
 !gradle/wrapper/gradle-wrapper.jar
-**/*.jfr
 
 ### STS ###
 .apt_generated

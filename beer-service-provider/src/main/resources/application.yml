@@ -2,6 +2,9 @@ spring:
   application:
     name: beerprovider
 
+logging:
+  file: beer-service-provider.log
+
 # Run app with -Dserver.port=9082 as VM arguments
 #server:
 #  port: ${vcap.application.port:9082}

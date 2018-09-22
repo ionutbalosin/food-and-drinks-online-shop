@@ -1,109 +1,225 @@
-$ ./ab.exe -n 1000 -c 10 -l http://localhost:9091/orderPizza
+RZBLAN+WZHIOBA@ATC104184 MINGW64 /c/Program_dev/Apache24/bin
+$ ./ab.exe -n 10000 -c 10 -l http://localhost:8771/feignshop/orderPizza/
 This is ApacheBench, Version 2.3 <$Revision: 1826891 $>
 Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
 Licensed to The Apache Software Foundation, http://www.apache.org/
 
 Benchmarking localhost (be patient)
-Completed 100 requests
-Completed 200 requests
-Completed 300 requests
-Completed 400 requests
-Completed 500 requests
-Completed 600 requests
-Completed 700 requests
-Completed 800 requests
-Completed 900 requests
 Completed 1000 requests
-Finished 1000 requests
+Completed 2000 requests
+Completed 3000 requests
+Completed 4000 requests
+Completed 5000 requests
+Completed 6000 requests
+Completed 7000 requests
+Completed 8000 requests
+Completed 9000 requests
+Completed 10000 requests
+Finished 10000 requests
 
 
 Server Software:
 Server Hostname:        localhost
-Server Port:            9091
+Server Port:            8771
 
-Document Path:          /orderPizza
+Document Path:          /feignshop/orderPizza/
 Document Length:        Variable
 
 Concurrency Level:      10
-Time taken for tests:   3.399 seconds
-Complete requests:      1000
+Time taken for tests:   56.872 seconds
+Complete requests:      10000
 Failed requests:        0
-Total transferred:      192173 bytes
-HTML transferred:       59173 bytes
-Requests per second:    294.20 [#/sec] (mean)
-Time per request:       33.990 [ms] (mean)
-Time per request:       3.399 [ms] (mean, across all concurrent requests)
-Transfer rate:          55.21 [Kbytes/sec] received
+Non-2xx responses:      7
+Total transferred:      1780570 bytes
+HTML transferred:       650528 bytes
+Requests per second:    175.83 [#/sec] (mean)
+Time per request:       56.872 [ms] (mean)
+Time per request:       5.687 [ms] (mean, across all concurrent requests)
+Transfer rate:          30.57 [Kbytes/sec] received
 
 Connection Times (ms)
               min  mean[+/-sd] median   max
-Connect:        1    1   1.6      1      35
-Processing:     3   32  56.6     22     914
-Waiting:        3   28  49.8     19     914
-Total:          4   33  56.7     23     915
+Connect:        1    1   1.0      1      30
+Processing:     5   55  81.9     32    1723
+Waiting:        4   55  81.8     32    1723
+Total:          6   57  81.9     34    1724
 
 Percentage of the requests served within a certain time (ms)
-  50%     23
-  66%     29
-  75%     35
-  80%     40
-  90%     57
-  95%     82
-  98%    147
-  99%    233
- 100%    915 (longest request)
+  50%     34
+  66%     49
+  75%     63
+  80%     74
+  90%    117
+  95%    165
+  98%    257
+  99%    343
+ 100%   1724 (longest request)
 
-$ ./ab.exe -n 1000 -c 10 -l http://localhost:9091/orderBeer
+RZBLAN+WZHIOBA@ATC104184 MINGW64 /c/Program_dev/Apache24/bin
+$ ./ab.exe -n 10000 -c 10 -l http://localhost:8771/feignshop/orderBeer/
 This is ApacheBench, Version 2.3 <$Revision: 1826891 $>
 Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
 Licensed to The Apache Software Foundation, http://www.apache.org/
 
 Benchmarking localhost (be patient)
-Completed 100 requests
-Completed 200 requests
-Completed 300 requests
-Completed 400 requests
-Completed 500 requests
-Completed 600 requests
-Completed 700 requests
-Completed 800 requests
-Completed 900 requests
 Completed 1000 requests
-Finished 1000 requests
+Completed 2000 requests
+Completed 3000 requests
+Completed 4000 requests
+Completed 5000 requests
+Completed 6000 requests
+Completed 7000 requests
+Completed 8000 requests
+Completed 9000 requests
+Completed 10000 requests
+Finished 10000 requests
 
 
 Server Software:
 Server Hostname:        localhost
-Server Port:            9091
+Server Port:            8771
 
-Document Path:          /orderBeer
+Document Path:          /feignshop/orderBeer/
 Document Length:        Variable
 
 Concurrency Level:      10
-Time taken for tests:   6.399 seconds
-Complete requests:      1000
+Time taken for tests:   34.243 seconds
+Complete requests:      10000
 Failed requests:        0
-Total transferred:      193125 bytes
-HTML transferred:       60125 bytes
-Requests per second:    156.26 [#/sec] (mean)
-Time per request:       63.995 [ms] (mean)
-Time per request:       6.399 [ms] (mean, across all concurrent requests)
-Transfer rate:          29.47 [Kbytes/sec] received
+Total transferred:      1739596 bytes
+HTML transferred:       609596 bytes
+Requests per second:    292.03 [#/sec] (mean)
+Time per request:       34.243 [ms] (mean)
+Time per request:       3.424 [ms] (mean, across all concurrent requests)
+Transfer rate:          49.61 [Kbytes/sec] received
 
 Connection Times (ms)
               min  mean[+/-sd] median   max
-Connect:        1    1   1.0      1      21
-Processing:     6   62  73.3     44     748
-Waiting:        5   61  73.3     43     747
-Total:          7   64  73.3     45     749
+Connect:        1    2   1.8      1      94
+Processing:     5   32  30.1     24     492
+Waiting:        0   31  30.2     22     492
+Total:          6   34  30.1     26     493
 
 Percentage of the requests served within a certain time (ms)
-  50%     45
-  66%     61
-  75%     77
-  80%     86
-  90%    115
-  95%    143
-  98%    227
-  99%    580
- 100%    749 (longest request)
+  50%     26
+  66%     33
+  75%     39
+  80%     43
+  90%     61
+  95%     81
+  98%    118
+  99%    164
+ 100%    493 (longest request)
+
+RZBLAN+WZHIOBA@ATC104184 MINGW64 /c/Program_dev/Apache24/bin
+$ ./ab.exe -n 10000 -c 10 -l http://localhost:8771/resttemplateshop/orderPizza/
+This is ApacheBench, Version 2.3 <$Revision: 1826891 $>
+Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
+Licensed to The Apache Software Foundation, http://www.apache.org/
+
+Benchmarking localhost (be patient)
+Completed 1000 requests
+Completed 2000 requests
+Completed 3000 requests
+Completed 4000 requests
+Completed 5000 requests
+Completed 6000 requests
+Completed 7000 requests
+Completed 8000 requests
+Completed 9000 requests
+Completed 10000 requests
+Finished 10000 requests
+
+
+Server Software:
+Server Hostname:        localhost
+Server Port:            8771
+
+Document Path:          /resttemplateshop/orderPizza/
+Document Length:        Variable
+
+Concurrency Level:      10
+Time taken for tests:   38.218 seconds
+Complete requests:      10000
+Failed requests:        0
+Non-2xx responses:      5
+Total transferred:      1850430 bytes
+HTML transferred:       720400 bytes
+Requests per second:    261.65 [#/sec] (mean)
+Time per request:       38.218 [ms] (mean)
+Time per request:       3.822 [ms] (mean, across all concurrent requests)
+Transfer rate:          47.28 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        1    1   1.1      1      35
+Processing:     4   37  42.9     27    1039
+Waiting:        4   36  43.0     26    1039
+Total:          6   38  42.9     28    1040
+
+Percentage of the requests served within a certain time (ms)
+  50%     28
+  66%     37
+  75%     43
+  80%     48
+  90%     68
+  95%     91
+  98%    135
+  99%    188
+ 100%   1040 (longest request)
+
+RZBLAN+WZHIOBA@ATC104184 MINGW64 /c/Program_dev/Apache24/bin
+$ ./ab.exe -n 10000 -c 10 -l http://localhost:8771/resttemplateshop/orderBeer/
+This is ApacheBench, Version 2.3 <$Revision: 1826891 $>
+Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
+Licensed to The Apache Software Foundation, http://www.apache.org/
+
+Benchmarking localhost (be patient)
+Completed 1000 requests
+Completed 2000 requests
+Completed 3000 requests
+Completed 4000 requests
+Completed 5000 requests
+Completed 6000 requests
+Completed 7000 requests
+Completed 8000 requests
+Completed 9000 requests
+Completed 10000 requests
+Finished 10000 requests
+
+
+Server Software:
+Server Hostname:        localhost
+Server Port:            8771
+
+Document Path:          /resttemplateshop/orderBeer/
+Document Length:        Variable
+
+Concurrency Level:      10
+Time taken for tests:   23.216 seconds
+Complete requests:      10000
+Failed requests:        0
+Total transferred:      1809683 bytes
+HTML transferred:       679683 bytes
+Requests per second:    430.74 [#/sec] (mean)
+Time per request:       23.216 [ms] (mean)
+Time per request:       2.322 [ms] (mean, across all concurrent requests)
+Transfer rate:          76.12 [Kbytes/sec] received
+
+Connection Times (ms)
+              min  mean[+/-sd] median   max
+Connect:        1    1   1.2      1      41
+Processing:     4   22  13.5     18     183
+Waiting:        3   20  13.7     16     183
+Total:          5   23  13.6     20     184
+
+Percentage of the requests served within a certain time (ms)
+  50%     20
+  66%     23
+  75%     26
+  80%     28
+  90%     36
+  95%     46
+  98%     64
+  99%     81
+ 100%    184 (longest request)

@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.ThreadLocalRandom;
 
 @RestController
 public class HomePageController {
@@ -20,6 +21,7 @@ public class HomePageController {
     @Autowired
     BeerService beerService;
 
+
     @RequestMapping("/")
     public String home() {
         Gson gson = new Gson();
@@ -28,12 +30,12 @@ public class HomePageController {
 
     @RequestMapping("/orderPizza")
     public String orderPizza() {
-        return pizzaService.orderPizza();
+        return String.format("[FeignShop-%d] - %s", ThreadLocalRandom.current().nextInt(), pizzaService.orderPizza());
     }
 
     @RequestMapping("/orderBeer")
     public String orderBeer() {
-        return beerService.orderBeer();
+        return String.format("[FeignShop-%d] - %s", ThreadLocalRandom.current().nextInt(), beerService.orderBeer());
     }
 }
 

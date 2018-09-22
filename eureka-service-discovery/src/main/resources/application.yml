@@ -1,6 +1,9 @@
 server:
   port: 8761
 
+logging:
+  file: eureka-service-discovery.log
+
 management:
   endpoint:
     health:
