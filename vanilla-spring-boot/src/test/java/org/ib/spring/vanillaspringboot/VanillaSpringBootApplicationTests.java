@@ -1,8 +1,8 @@
-package org.ib.spring.serviceprovider;
+package org.ib.spring.vanillaspringboot;
 
 //@RunWith(SpringRunner.class)
 //@SpringBootTest
-public class PizzaProviderApplicationTests {
+public class VanillaSpringBootApplicationTests {
 
 	//@Test
 	public void contextLoads() {

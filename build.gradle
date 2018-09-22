@@ -28,9 +28,15 @@ subprojects {
     apply plugin: 'io.spring.dependency-management'
     
     dependencies {
-        compile('org.springframework.boot:spring-boot-starter-web')
-        compile('org.springframework.boot:spring-boot-starter-actuator')
-        testCompile('org.springframework.boot:spring-boot-starter-test')
+        if (project.name.equals("vanilla-java")) {
+            // no implicit Spring dependency
+        } else if (project.name.equals("vanilla-spring-boot")) {
+            compile('org.springframework.boot:spring-boot-starter-web')
+        } else {
+            compile('org.springframework.boot:spring-boot-starter-web')
+            compile('org.springframework.boot:spring-boot-starter-actuator')
+            testCompile('org.springframework.boot:spring-boot-starter-test')
+        }
     }
 
     dependencyManagement {
@@ -100,5 +106,15 @@ project(':pizza-service-provider') {
 project(':beer-service-provider') {
     dependencies {
         compile('org.springframework.cloud:spring-cloud-starter-netflix-eureka-client')
+    }
+}
+
+project(':vanilla-spring-boot') {
+    dependencies {
+    }
+}
+
+project(':vanilla-java') {
+    dependencies {
     }
 }
