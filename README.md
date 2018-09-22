@@ -20,6 +20,13 @@ The entire communication is based on REST calls.
 
 ### ToDo
 
-6. Sleuth – distributed tracing via logs
-7. Zipkin – distributed tracing system with request visualization.
-8. KeyCloak – identity and access management
+7. Docker - Docker-ize all services
+8. Tracing
+    - Sleuth – distributed tracing via logs
+    - Zipkin – distributed tracing system with request visualization.
+9. Monitoring
+    - Prometheus
+    - Grafana
+    - Kibana
+10. Security
+    - KeyCloak – identity and access management
