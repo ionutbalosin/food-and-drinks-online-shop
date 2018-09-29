@@ -29,11 +29,10 @@ public class SimplePreFilter extends ZuulFilter {
 
     @Override
     public Object run() {
+        // TODO: Produce a bean if you want for the filter to be active!
         RequestContext ctx = RequestContext.getCurrentContext();
         HttpServletRequest request = ctx.getRequest();
-
-        log.info(String.format(">>> %s request to %s <<<", request.getMethod(), request.getRequestURL().toString()));
-
+        log.debug(String.format(">>> %s request to %s <<<", request.getMethod(), request.getRequestURL().toString()));
         return null;
     }
 

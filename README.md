@@ -60,7 +60,9 @@ For checking the metrics, open a browser and check below URLs:
 + http://localhost:9092/actuator
     - to access resttemplate-shop service
 
-To send real requests across micro-services, open a browser and check below URLs:
+To send real requests across micro-services, open a browser and check below URLs.
+
+#### Pizza and Feign Client MicroServices
 + http://localhost:9081/providePizza
     - request route: pizza-service-provider
 + http://localhost:9091/orderPizza
@@ -68,7 +70,13 @@ To send real requests across micro-services, open a browser and check below URLs
 + http://localhost:8771/feignshop/orderPizza/
     - request route: zuul-gateway -> feign-shop -> pizza-service-provider
     
-Please use analogous URLs for **beer-service-provider** and **resttemplate-shop** services!
+#### Beer and RestTemplate Client MicroServices
++ http://localhost:9082/provideBeer
+    - request route: beer-service-provider
++ http://localhost:9092/orderBeer
+    - request route: resttemplate-shop -> beer-service-provider
++ http://localhost:8771/resttemplateshop/orderBeer/
+    - request route: zuul-gateway -> resttemplate-shop -> beer-service-provider
 
 ### Load Test
 
