@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-. ./properties.sh
+. ../properties.sh
 
 # Start Feign Client Client
 echo ">>> START FEIGN SHOP <<<"

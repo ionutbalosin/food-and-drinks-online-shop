@@ -11,9 +11,9 @@ import java.util.concurrent.ThreadLocalRandom;
 @RestController
 public class PizzaProviderController {
 
-    @RequestMapping(value="/orderPizza", method = RequestMethod.GET)
+    @RequestMapping(value="/providePizza", method = RequestMethod.GET)
     String orderPizza() {
-        return String.format("[PizzaProvider-%d] - %s", ThreadLocalRandom.current().nextInt(), "Capricciosa");
+        return String.format("[%s][ResponseId-%d]-%s", Thread.currentThread().getName(), ThreadLocalRandom.current().nextInt(Integer.MAX_VALUE), "Capricciosa");
     }
 
     @RequestMapping(value="/pizzaMenu", method = RequestMethod.GET)

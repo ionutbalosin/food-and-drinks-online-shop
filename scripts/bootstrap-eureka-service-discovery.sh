@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-. ./properties.sh
+. ../properties.sh
 
 # Start Eureka Service Discovery
 echo ">>> START EUREKA SERVICE DISCOVERY <<<"

@@ -30,12 +30,12 @@ public class HomePageController {
 
     @RequestMapping("/orderPizza")
     public String orderPizza() {
-        return String.format("[FeignShop-%d] - %s", ThreadLocalRandom.current().nextInt(), pizzaService.orderPizza());
+        return String.format("[%s][ResponseId-%d]-%s", Thread.currentThread().getName(), ThreadLocalRandom.current().nextInt(Integer.MAX_VALUE), pizzaService.providePizza());
     }
 
     @RequestMapping("/orderBeer")
     public String orderBeer() {
-        return String.format("[FeignShop-%d] - %s", ThreadLocalRandom.current().nextInt(), beerService.orderBeer());
+        return String.format("[%s][ResponseId-%d]-%s", Thread.currentThread().getName(), ThreadLocalRandom.current().nextInt(Integer.MAX_VALUE), beerService.provideBeer());
     }
 }
 

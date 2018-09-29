@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-. ./properties.sh
+. ../properties.sh
 
 # Start Vanilla Java
 echo ">>> START VANILLA JAVA <<<"

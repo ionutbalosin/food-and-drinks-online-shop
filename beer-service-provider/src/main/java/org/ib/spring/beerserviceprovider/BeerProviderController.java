@@ -11,13 +11,13 @@ import java.util.concurrent.ThreadLocalRandom;
 @RestController
 public class BeerProviderController {
 
-    @RequestMapping(value="/orderBeer", method = RequestMethod.GET)
+    @RequestMapping(value="/provideBeer", method = RequestMethod.GET)
     String orderBeer() {
-        return String.format("[BeerProvider-%d] - %s", ThreadLocalRandom.current().nextInt(), "Heineken");
+        return String.format("[%s][ResponseId-%d]-%s", Thread.currentThread().getName(), ThreadLocalRandom.current().nextInt(Integer.MAX_VALUE), "Heineken");
     }
 
     @RequestMapping(value="/beerMenu", method = RequestMethod.GET)
     Collection<Beer> getBeerMenu() {
-        return Arrays.asList(new Beer("Heineken", "8 Euro"), new Beer("Stella Artois", "8 Euro"));
+        return Arrays.asList(new Beer("Heineken", "4 Euro"), new Beer("Stella Artois", "5 Euro"));
     }
 }

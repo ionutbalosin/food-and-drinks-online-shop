@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-. ./properties.sh
+. ../properties.sh
 
 # Start ZUUL
 echo ">>> START ZUUL GATEWAY <<<"

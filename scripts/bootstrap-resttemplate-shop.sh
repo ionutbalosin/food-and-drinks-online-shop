@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-. ./properties.sh
+. ../properties.sh
 
 # Start Rest Template Client
 echo ">>> START REST TEMPLATE SHOP <<<"

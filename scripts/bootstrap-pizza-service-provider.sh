@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-. ./properties.sh
+. ../properties.sh
 
 # Start Pizza Service Provider
 echo ">>> START PIZZA SERVICE PROVIDER <<<"

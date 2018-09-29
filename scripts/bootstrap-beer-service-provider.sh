@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-. ./properties.sh
+. ../properties.sh
 
 # Start Beer Service Provider
 echo ">>> START BEER SERVICE PROVIDER <<<"
