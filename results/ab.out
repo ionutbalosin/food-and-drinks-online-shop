@@ -1,23 +1,22 @@
 ===========================================================================
 WARM-UP
-$ /c/Program_dev/Apache24/bin
-$ ./ab.exe -n 1000 -c 4 -l http://localhost:8771/feignshop/orderPizza/
+$ ./ab.exe -n 2000 -c 4 -l http://localhost:8771/feignshop/orderPizza/
 This is ApacheBench, Version 2.3 <$Revision: 1826891 $>
 Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
 Licensed to The Apache Software Foundation, http://www.apache.org/
 
 Benchmarking localhost (be patient)
-Completed 100 requests
 Completed 200 requests
-Completed 300 requests
 Completed 400 requests
-Completed 500 requests
 Completed 600 requests
-Completed 700 requests
 Completed 800 requests
-Completed 900 requests
 Completed 1000 requests
-Finished 1000 requests
+Completed 1200 requests
+Completed 1400 requests
+Completed 1600 requests
+Completed 1800 requests
+Completed 2000 requests
+Finished 2000 requests
 
 
 Server Software:
@@ -28,37 +27,36 @@ Document Path:          /feignshop/orderPizza/
 Document Length:        Variable
 
 Concurrency Level:      4
-Time taken for tests:   13.116 seconds
-Complete requests:      1000
+Time taken for tests:   14.441 seconds
+Complete requests:      2000
 Failed requests:        0
-Total transferred:      215207 bytes
-HTML transferred:       102207 bytes
-Requests per second:    76.25 [#/sec] (mean)
-Time per request:       52.462 [ms] (mean)
-Time per request:       13.116 [ms] (mean, across all concurrent requests)
-Transfer rate:          16.02 [Kbytes/sec] received
+Total transferred:      430419 bytes
+HTML transferred:       204419 bytes
+Requests per second:    138.49 [#/sec] (mean)
+Time per request:       28.882 [ms] (mean)
+Time per request:       7.221 [ms] (mean, across all concurrent requests)
+Transfer rate:          29.11 [Kbytes/sec] received
 
 Connection Times (ms)
               min  mean[+/-sd] median   max
-Connect:        1    2   1.6      2      31
-Processing:     8   50  44.2     37     412
-Waiting:        8   50  43.7     36     412
-Total:          9   52  44.1     39     413
+Connect:        1    1   0.6      1      21
+Processing:     5   27  25.6     19     227
+Waiting:        5   27  25.6     18     227
+Total:          6   29  25.7     20     228
 
 Percentage of the requests served within a certain time (ms)
-  50%     39
-  66%     51
-  75%     65
-  80%     75
-  90%    103
-  95%    139
-  98%    193
-  99%    220
- 100%    413 (longest request)
+  50%     20
+  66%     27
+  75%     34
+  80%     40
+  90%     59
+  95%     78
+  98%    109
+  99%    137
+ 100%    228 (longest request)
 
 ===========================================================================
 REAL MEASUREMENTS
-$ /c/Program_dev/Apache24/bin
 $ ./ab.exe -n 5000 -c 4 -l http://localhost:8771/feignshop/orderPizza/
 This is ApacheBench, Version 2.3 <$Revision: 1826891 $>
 Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
@@ -86,33 +84,31 @@ Document Path:          /feignshop/orderPizza/
 Document Length:        Variable
 
 Concurrency Level:      4
-Time taken for tests:   32.862 seconds
+Time taken for tests:   20.265 seconds
 Complete requests:      5000
 Failed requests:        0
-Non-2xx responses:      1
-Total transferred:      1075895 bytes
-HTML transferred:       510889 bytes
-Requests per second:    152.15 [#/sec] (mean)
-Time per request:       26.290 [ms] (mean)
-Time per request:       6.572 [ms] (mean, across all concurrent requests)
-Transfer rate:          31.97 [Kbytes/sec] received
+Total transferred:      1075907 bytes
+HTML transferred:       510907 bytes
+Requests per second:    246.73 [#/sec] (mean)
+Time per request:       16.212 [ms] (mean)
+Time per request:       4.053 [ms] (mean, across all concurrent requests)
+Transfer rate:          51.85 [Kbytes/sec] received
 
 Connection Times (ms)
               min  mean[+/-sd] median   max
-Connect:        1    1   1.0      2      37
-Processing:     4   25  56.4     13    1855
-Waiting:        3   24  56.2     12    1817
-Total:          5   26  56.5     14    1856
-WARNING: The median and mean for the initial connection time are not within a normal deviation
-        These results are probably not that reliable.
+Connect:        1    1   0.8      1      33
+Processing:     3   15  24.3      9     557
+Waiting:        3   15  24.3      8     557
+Total:          4   16  24.4     10     558
 
 Percentage of the requests served within a certain time (ms)
-  50%     14
-  66%     18
-  75%     23
-  80%     28
-  90%     45
-  95%     71
-  98%    144
-  99%    206
- 100%   1856 (longest request)
+  50%     10
+  66%     12
+  75%     15
+  80%     18
+  90%     28
+  95%     47
+  98%     81
+  99%    122
+ 100%    558 (longest request)
+
