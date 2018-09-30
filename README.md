@@ -15,8 +15,7 @@ The entire communication is based on REST calls.
 1. Zuul –  gateway service that provides dynamic routing, monitoring, resiliency, security, and more
 2. Ribbon – client side load balancer
 3. Feign – declarative REST client
-4. RestTemplate – REST client
-5. Eureka – service registration and discovery
+4. Eureka – service registration and discovery
 
 ### Build
 
@@ -37,9 +36,7 @@ Examples of starting all services with Java Mission Control (JMC) as optional pa
 $ ./bootstrap-service.sh eureka-service-discovery 0.0.1-SNAPSHOT 8761 [true||false]"
 $ ./bootstrap-service.sh zuul-gateway 0.0.1-SNAPSHOT 8771 [true||false]"
 $ ./bootstrap-service.sh pizza-service-provider 0.0.1-SNAPSHOT 9081 [true||false]"
-$ ./bootstrap-service.sh beer-service-provider 0.0.1-SNAPSHOT 9082 [true||false]"
 $ ./bootstrap-service.sh feign-shop 0.0.1-SNAPSHOT 9091 [true||false]"
-$ ./bootstrap-service.sh resttemplate-shop 0.0.1-SNAPSHOT 9092 [true||false]"
 ```
 
 Please make sure the **eureka-service-discovery** is started first!
@@ -53,12 +50,8 @@ For checking the metrics, open a browser and check below URLs:
     - to access zuul-gateway service
 + http://localhost:9081/actuator
     - to access pizza-service-provider service
-+ http://localhost:9082/actuator
-    - to access beer-service-provider service
 + http://localhost:9091/actuator
     - to access feign-shop service
-+ http://localhost:9092/actuator
-    - to access resttemplate-shop service
 
 To send real requests across micro-services, open a browser and check below URLs.
 
@@ -69,14 +62,6 @@ To send real requests across micro-services, open a browser and check below URLs
     - request route: feign-shop -> pizza-service-provider
 + http://localhost:8771/feignshop/orderPizza/
     - request route: zuul-gateway -> feign-shop -> pizza-service-provider
-    
-#### Beer and RestTemplate Client MicroServices
-+ http://localhost:9082/provideBeer
-    - request route: beer-service-provider
-+ http://localhost:9092/orderBeer
-    - request route: resttemplate-shop -> beer-service-provider
-+ http://localhost:8771/resttemplateshop/orderBeer/
-    - request route: zuul-gateway -> resttemplate-shop -> beer-service-provider
 
 ### Load Test
 
