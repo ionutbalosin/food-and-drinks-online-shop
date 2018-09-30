@@ -33,10 +33,10 @@ $ ./bootstrap-service.sh <GROUP_ID> <VERSION> <PORT> [true||false]
 
 Examples of starting all services with Java Mission Control (JMC) as optional parameter:
 ```
-$ ./bootstrap-service.sh eureka-service-discovery 0.0.1-SNAPSHOT 8761 [true||false]"
-$ ./bootstrap-service.sh zuul-gateway 0.0.1-SNAPSHOT 8771 [true||false]"
-$ ./bootstrap-service.sh pizza-service-provider 0.0.1-SNAPSHOT 9081 [true||false]"
-$ ./bootstrap-service.sh feign-shop 0.0.1-SNAPSHOT 9091 [true||false]"
+$ ./bootstrap-service.sh eureka-service-discovery 0.0.1-SNAPSHOT 8761 [true||false]
+$ ./bootstrap-service.sh zuul-gateway 0.0.1-SNAPSHOT 8771 [true||false]
+$ ./bootstrap-service.sh pizza-service-provider 0.0.1-SNAPSHOT 9081 [true||false]
+$ ./bootstrap-service.sh feign-shop 0.0.1-SNAPSHOT 9091 [true||false]
 ```
 
 Please make sure the **eureka-service-discovery** is started first!
