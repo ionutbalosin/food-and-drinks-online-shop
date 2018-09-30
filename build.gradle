@@ -28,15 +28,9 @@ subprojects {
     apply plugin: 'io.spring.dependency-management'
     
     dependencies {
-        if (project.name.equals("vanilla-java")) {
-            // no implicit Spring dependency
-        } else if (project.name.equals("vanilla-spring-boot")) {
-            compile('org.springframework.boot:spring-boot-starter-web')
-        } else {
-            compile('org.springframework.boot:spring-boot-starter-web')
-            compile('org.springframework.boot:spring-boot-starter-actuator')
-            testCompile('org.springframework.boot:spring-boot-starter-test')
-        }
+        compile('org.springframework.boot:spring-boot-starter-web')
+        compile('org.springframework.boot:spring-boot-starter-actuator')
+        testCompile('org.springframework.boot:spring-boot-starter-test')
     }
 
     dependencyManagement {
@@ -69,14 +63,6 @@ project(':feign-shop') {
     }
 }
 
-project(':resttemplate-shop') {
-    dependencies {
-        compile('org.springframework.cloud:spring-cloud-starter-config')
-        compile('org.springframework.cloud:spring-cloud-starter-netflix-eureka-client')
-        compile("com.netflix.hystrix:hystrix-javanica")
-    }
-}
-
 project(':zuul-gateway') {
     dependencies {
         compile('org.springframework.cloud:spring-cloud-starter-netflix-eureka-client')
@@ -100,21 +86,5 @@ project(':eureka-service-discovery') {
 project(':pizza-service-provider') {
     dependencies {
         compile('org.springframework.cloud:spring-cloud-starter-netflix-eureka-client')
-    }
-}
-
-project(':beer-service-provider') {
-    dependencies {
-        compile('org.springframework.cloud:spring-cloud-starter-netflix-eureka-client')
-    }
-}
-
-project(':vanilla-spring-boot') {
-    dependencies {
-    }
-}
-
-project(':vanilla-java') {
-    dependencies {
     }
 }

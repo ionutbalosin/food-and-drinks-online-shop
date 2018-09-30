@@ -1,6 +1,0 @@
-spring:
-  application:
-    name: vanillaspringboot
-
-logging:
-  file: vanilla-spring-boot.log
